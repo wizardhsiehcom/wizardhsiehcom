@@ -1,0 +1,94 @@
+---
+interface Line {
+  command: string
+  output: string
+}
+
+interface Props {
+  lines: Line[]
+  startDelay?: number
+}
+
+const { lines, startDelay = 600 } = Astro.props
+---
+
+<div class="terminal-window bg-surface border border-elevated rounded-xl overflow-hidden font-mono text-sm shadow-2xl shadow-black/50 max-w-md w-full">
+  <!-- Title bar -->
+  <div class="flex items-center gap-2 px-4 py-3 bg-elevated/80 border-b border-elevated">
+    <div class="flex gap-1.5">
+      <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+      <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+      <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+    </div>
+    <span class="text-slate-500 text-xs ml-2 select-none">~/portfolio</span>
+  </div>
+
+  <!-- Terminal body -->
+  <div class="p-5 min-h-[220px]">
+    <div id="terminal-lines" class="space-y-0.5 leading-relaxed"></div>
+  </div>
+</div>
+
+<script define:vars={{ lines, startDelay }}>
+  const container = document.getElementById('terminal-lines')
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+  }
+
+  async function typeText(el, text, speed = 65) {
+    for (const char of text) {
+      el.textContent += char
+      await sleep(speed + Math.random() * 25)
+    }
+  }
+
+  async function runAnimation() {
+    await sleep(startDelay)
+
+    for (let i = 0; i < lines.length; i++) {
+      const { command, output } = lines[i]
+
+      const cmdRow = document.createElement('div')
+      cmdRow.className = 'flex items-center gap-1'
+
+      const prompt = document.createElement('span')
+      prompt.className = 'text-accent-cyan select-none shrink-0'
+      prompt.textContent = '$ '
+
+      const cmdText = document.createElement('span')
+      cmdText.className = 'text-slate-200'
+
+      cmdRow.appendChild(prompt)
+      cmdRow.appendChild(cmdText)
+      container.appendChild(cmdRow)
+
+      await typeText(cmdText, command)
+      await sleep(280)
+
+      const outRow = document.createElement('div')
+      outRow.className = 'text-green-400 pl-4 pb-2'
+      outRow.textContent = output
+      container.appendChild(outRow)
+
+      await sleep(350)
+    }
+
+    // Blinking cursor on final prompt
+    const cursorRow = document.createElement('div')
+    cursorRow.className = 'flex items-center gap-1'
+
+    const prompt = document.createElement('span')
+    prompt.className = 'text-accent-cyan select-none'
+    prompt.textContent = '$ '
+
+    const cursor = document.createElement('span')
+    cursor.className = 'inline-block w-2 h-[1.1em] bg-accent-cyan animate-blink align-middle'
+
+    cursorRow.appendChild(prompt)
+    cursorRow.appendChild(cursor)
+    container.appendChild(cursorRow)
+  }
+
+  runAnimation()
+</script>

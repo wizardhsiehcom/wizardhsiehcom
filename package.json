@@ -1,0 +1,21 @@
+{
+  "name": "wizardhsiehcom",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.16.18",
+    "@astrojs/tailwind": "^5.1.4",
+    "astro-icon": "^1.1.4",
+    "@iconify-json/simple-icons": "^1.2.30",
+    "@iconify-json/mdi": "^1.2.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  }
+}

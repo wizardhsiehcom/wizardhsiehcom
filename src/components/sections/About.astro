@@ -1,0 +1,57 @@
+---
+const stats = [
+  { value: '0+', label: 'Years Experience' },
+  { value: '3+', label: 'Projects Shipped' },
+  { value: '5+', label: 'Technologies' },
+  { value: '∞', label: 'Coffees Drank' },
+]
+---
+
+<section id="about" class="py-24 bg-surface">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Avatar placeholder -->
+      <div class="flex justify-center reveal">
+        <div class="relative">
+          <!-- Decorative border rings -->
+          <div class="absolute -inset-3 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20 blur-sm"></div>
+          <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-elevated overflow-hidden border-2 border-accent-cyan/20" style="box-shadow: 0 0 40px rgba(0, 212, 255, 0.1)">
+            <img src="/images/avatar.jpg" alt="Edison Hsieh" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Text content -->
+      <div class="reveal" style="transition-delay: 150ms">
+        <h2 class="section-heading">About Me</h2>
+        <div class="h-px w-12 bg-gradient-to-r from-accent-cyan to-accent-purple mb-6 rounded-full"></div>
+
+        <div class="space-y-4 text-slate-400 leading-relaxed text-sm mb-8">
+          <p>
+            I'm a Full Stack Engineer based in Taiwan, passionate about building products that make a real impact.
+            I specialize in TypeScript, React, and Node.js, and I love exploring the intersection of AI and web development.
+          </p>
+          <p>
+            When I'm not coding, you'll find me contributing to open source projects or experimenting with new technologies. I believe great software is built through collaboration,
+            clear communication, and a relentless focus on user experience.
+          </p>
+          <p>
+            I'm always open to interesting opportunities — whether it's building something new together,
+            contributing to your team, or just having a great tech conversation.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {stats.map(stat => (
+            <div class="bg-elevated rounded-xl p-4 text-center border border-elevated/50 hover:border-accent-cyan/25 transition-colors">
+              <div class="text-2xl font-bold text-accent-cyan mb-1">{stat.value}</div>
+              <div class="text-xs text-slate-400 leading-snug">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

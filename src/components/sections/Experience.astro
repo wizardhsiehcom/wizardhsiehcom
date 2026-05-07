@@ -1,0 +1,31 @@
+---
+import TimelineItem from '../ui/TimelineItem.astro'
+import { experiences } from '../../data/experience'
+---
+
+<section id="experience" class="py-24 bg-base">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <h2 class="section-heading">Experience</h2>
+      <p class="section-subheading">My professional journey</p>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      {experiences.map((entry, i) => (
+        <div class="reveal" style={`transition-delay: ${i * 100}ms`}>
+          <TimelineItem
+            role={entry.role}
+            company={entry.company}
+            companyUrl={entry.companyUrl}
+            startDate={entry.startDate}
+            endDate={entry.endDate}
+            description={entry.description}
+            tags={entry.tags}
+            type={entry.type}
+            isLast={i === experiences.length - 1}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

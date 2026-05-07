@@ -15,5 +15,5 @@ I specialize in TypeScript, React, and Node.js, and love building products that 
 
 - Email: edison33364@gmail.com
 - GitHub: [github.com/wizardhsieh](https://github.com/wizardhsieh)
-- LinkedIn: [linkedin.com/in/wizardhsieh](https://linkedin.com/in/wizardhsieh)
+- LinkedIn: [linkedin.com/in/wizardhsiehcom](https://linkedin.com/in/wizardhsiehcom)
 - Portfolio: [wizardhsieh.com](https://wizardhsieh.com)

@@ -1,16 +1,19 @@
-## Hi there 👋
+# Hi, I'm Edison Hsieh 👋
 
-<!--
-**wizardhsiehcom/wizardhsiehcom** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Full Stack Engineer based in Taiwan, passionate about AI, Web, and Open Source.
 
-Here are some ideas to get you started:
+I specialize in TypeScript, React, and Node.js, and love building products that make a real impact.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Skills
+
+**Languages:** TypeScript · Python · Go · Rust · SQL  
+**Frontend:** React · Next.js · Astro · Tailwind CSS · Vue  
+**Backend:** Node.js · FastAPI · GraphQL · PostgreSQL · Redis  
+**Tools:** Docker · AWS · GitHub Actions · Git · Vercel
+
+## Contact
+
+- Email: edison33364@gmail.com
+- GitHub: [github.com/wizardhsieh](https://github.com/wizardhsieh)
+- LinkedIn: [linkedin.com/in/wizardhsieh](https://linkedin.com/in/wizardhsieh)
+- Portfolio: [wizardhsieh.com](https://wizardhsieh.com)
